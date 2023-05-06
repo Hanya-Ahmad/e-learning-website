@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>E-Learning Website</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+
+<style>
+.sidebar {
+  margin-top: 9%;
+    padding: 0;
+    margin-left: 7%;
+    /* width: 200px; */
+    font-size: 20px;
+    position: fixed;
+    height: 100%;
+    width: 25%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.main{
+  width: 100%;
+    /* margin-left: 508px; */
+    height: 100%;
+    display: block;
+    color: #37423b;
+    margin-top: 9%;
+    margin-left: 12%;
+}
+.sidebar a {
+  display: block;
+  color: #37423b;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  color: #5fcf80;
+}
+
+.sidebar a:hover:not(.active) {
+  color: #5fcf80;
+}
+.sidebar a:hover{
+  cursor: pointer;
+}
+div.content {
+  /* margin-left: 200px; */
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center" style="background-color: white !important;">
+      <h1 class="logo me-auto"><a href="#" style="visibility: visible;">Copywriting Course</a></h1> 
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+
+          <li><a class="active" > My Courses</a></li>
+
+          <li><a href="/">Home</a></li><li><a  href="/profile">Profile</a></li>
+          <li><a  href="/logout">Log Out</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Page content -->
+  <div class="content">
+    <div class="sidebar">
+      <a id="assignments">Assignments</a>
+      <a id="grades">Grades</a>
+      <a class="active"id="discussions" >Discussions</a>
+      <!-- <a href="#about">Course</a> -->
+    </div>
+    <div class="main" id="main"style="visibility: hidden;">
+      <div class="container justify-content-center mt-5 border-left border-right" >
+        <div class="d-flex justify-content-center py-2">
+            <div class="second py-2 px-2"> <span class="text1">Type your note, and hit enter to add it</span>
+                <div class="d-flex justify-content-between py-1 pt-2">
+                    <div><span class="text2">Martha</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center py-2">
+            <div class="second py-2 px-2"> <span class="text1">Type your note, and hit enter to add it</span>
+                <div class="d-flex justify-content-between py-1 pt-2">
+                    <div><span class="text2">Curtis</span></div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center py-2">
+            <div class="second py-2 px-2"> <span class="text1">Type your note, and hit enter to add it</span>
+                <div class="d-flex justify-content-between py-1 pt-2">
+                    <div><span class="text2">Beth</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center py-2 pb-3">
+            <div class="second py-2 px-2"> <span class="text1">Type your note, and hit enter to add it</span>
+                <div class="d-flex justify-content-between py-1 pt-2">
+                    <div><span class="text2">Curtis</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center pt-3 pb-2"> <input type="text" name="text" placeholder="+ Add a note" class="form-control addtxt"> </div>
+
+    </div>
+    </div>
+  </div>
+  <script>
+    
+const sidebar = document.querySelector(".sidebar").getElementsByTagName("a");
+const main = document.getElementById("main");
+    const discussions = document.getElementById("discussions");
+for(let i = 0; i < sidebar.length; i++){
+  let element = document.getElementById(sidebar[i].id);
+  if(discussions.classList.contains('active')){
+        console.log("visible");
+        main.style.visibility = "visible";
+      }
+      else{
+        main.style.visibility = "hidden";
+
+      }
+  element.addEventListener("click",()=>{
+      if(discussions.classList.contains('active')){
+        console.log("visible");
+        main.style.visibility = "visible";
+      }
+      else{
+        main.style.visibility = "hidden";
+      }
+        for(let j = 0; j < sidebar.length; j++){
+          if(sidebar[j].id !== element.id){
+            document.getElementById(sidebar[j].id).classList.remove("active");
+          }
+        }
+        element.classList.add("active");
+      })
+    }
+    
+  </script>
+</body>
+</html>
